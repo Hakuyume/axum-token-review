@@ -1,0 +1,25 @@
+[package]
+name = "axum-token-review"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["rustls-tls"]
+openssl-tls = ["token-review/openssl-tls"]
+rustls-tls = ["token-review/rustls-tls"]
+
+v1_22 = ["token-review/v1_22"]
+v1_23 = ["token-review/v1_23"]
+v1_24 = ["token-review/v1_24"]
+v1_25 = ["token-review/v1_25"]
+v1_26 = ["token-review/v1_26"]
+v1_27 = ["token-review/v1_27"]
+v1_28 = ["token-review/v1_28"]
+
+[dependencies]
+axum = { version = "0.6", default-features = false, features = ["headers", "tokio"] }
+futures = "0.3"
+token-review = { version = "0.1", default-features = false }
+tower = "0.4"
